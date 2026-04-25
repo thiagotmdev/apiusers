@@ -12,13 +12,13 @@
     "start": "node dist/server.js"
   },
   "dependencies": {
-    "@prisma/client": "6.19",
+    "@prisma/client": "^6.19",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   },
   "devDependencies": {
     "esbuild": "^0.28.0",
-    "prisma": "6.19"
+    "prisma": "^6.19"
   }
 }
