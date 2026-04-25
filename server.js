@@ -30,7 +30,7 @@ app.post('/usuarios', async (req, res) => {
 app.put('/usuarios/:id', async (req, res) => {
     const user = await prisma.user.update({
         where: {
-            id: Number(req.params.id)
+            id: req.params.id
         },
         data: {
             email: req.body.email,
@@ -45,7 +45,7 @@ app.put('/usuarios/:id', async (req, res) => {
 app.delete('/usuarios/:id', async (req, res) => {
     await prisma.user.delete({
         where: {
-            id: Number(req.params.id)
+            id: req.params.id
         }
     });
 
