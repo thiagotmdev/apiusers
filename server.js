@@ -6,7 +6,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const prisma = new PrismaClient();
+const globalForPrisma = globalThis;
+
+const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient();
+
+if (process.env.NODE_ENV !== 'production') {
+  globalForPrisma.prisma = prisma;
+}
 
 app.get('/usuarios', async (req, res) => {
 
